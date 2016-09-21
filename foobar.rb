@@ -3,16 +3,24 @@ class Foobar
   def self.baz(a)
     # Class method
     # Call with `Foobar.baz`
-  end
+    new_a = Array.new
+    i = 0
+    sum = 0
 
-  def foo(b)
-    # Instance method
-    # Call with foobar_instance.foo
-  end
+    a.each { |e|
+    	i = e.to_i + 2
+    	if (!new_a.include? i) && (i % 2 == 0)
+    		new_a.push(i)
+    	end
+  		}
 
-  def bar(c)
-    # Instance method
-    # Call with foobar_instance.bar
+  	new_a.each { |e|
+  		if e < 10
+  			sum += e
+  		end
+  		}
+
+  	sum
   end
 end
 
